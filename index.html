@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket IO</title>
+    <style>
+        /*body{
+            padding:0;
+            margin:0;
+            display:flex;
+            justify-content:center;
+        }*/
+        label{
+            font-family: 'Gotham Rounded';
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #message-container{
+            width:100%;
+            /*max-width:120px;*/
+        }
+        #message-container div{
+            background-color: gray;
+            padding:5px;
+        }
+        #message-container div:nth-child(2n){
+            background-color: white;
+        }
+        /*#message-container div:nth-child(3n){
+            background-color: red;
+        }*/
+        #message-container div{
+            font-family: 'Gotham Rounded';
+            font-weight: bold;
+            font-size: 32px;
+        }
+        #form-container{
+            display:flex;
+            flex-wrap:wrap;
+            position: relative;
+            top:550px;
+        }
+        #message-input{
+            width:100% auto;
+            margin:auto;
+            padding:5px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+        #send-btn{
+            font-family: 'Gotham Rounded';
+            font-size:20px;
+            padding:5px 20px;
+            background-color:gray
+        }
+        #send-btn:hover{
+            background-color: lightgray;
+        }
+        #send-btn,#message-input{
+            border:1px solid black;
+            border-radius: 6px;
+        }
+        #room-input{
+            width:100% auto;
+            margin:auto;
+            padding:5px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+        #join-btn{
+            font-family: 'Gotham Rounded';
+            font-size:20px;
+            padding:5px 20px;
+            background-color:gray
+        }
+        #join-btn:hover{
+            background-color: lightgray;
+        }
+        #join-btn,#room-input{
+            border:1px solid black;
+            border-radius: 6px;
+        }
+    </style>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="message-container"></div>
+    <div id="form-container">
+        <form id="send-container">
+            <label for="input">Message:</label>
+            <input type="text" id="message-input">
+            <button type="submit" id="send-btn">Send</button>
+            <br>
+            <br>
+            <label for="rooms">Room:</label>
+            <input type="text" id="room-input">
+            <button type="button" id="join-btn">Join</button>
+        </form>
+    </div>
+</body>
+</html>
